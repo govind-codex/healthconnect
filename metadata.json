@@ -1,0 +1,6 @@
+{
+  "name": "HealthCamp Connect",
+  "description": "A smart platform for discovering and managing free health camps in Indore, connecting hospitals and NGOs with the community.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
