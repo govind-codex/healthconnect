@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
       >
         <div className="flex flex-col items-center gap-1">
           <h3 className="text-sm font-black uppercase tracking-[0.3em] text-slate-900">
-            Nihal Goud
+            Govind Nagar
           </h3>
 
           <p className="text-[10px] uppercase font-bold text-blue-600 tracking-[0.15em]">
@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
 
         <div className="flex items-center gap-5">
           <a
-            href="https://github.com/nihalgd"
+            href="https://github.com/govind-codex"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex flex-col items-center gap-1 transition-all duration-300"
@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
           </a>
 
           <a
-            href="https://linkedin.com/in/nihal-goud-43a76b293"
+            href="https://www.linkedin.com/in/govind-nagar-6b16771ab/"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex flex-col items-center gap-1 transition-all duration-300"
@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
           <div className="w-6 h-px bg-slate-100"></div>
 
           <p className="text-[9px] font-medium text-slate-300 tracking-wider">
-            © {new Date().getFullYear()} • CREATED BY NIHAL
+            © {new Date().getFullYear()} • CREATED BY GOVIND
           </p>
         </div>
       </motion.div>
