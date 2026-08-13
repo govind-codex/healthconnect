@@ -1,4 +1,4 @@
-# HealthCamp Connect Indore
+# Health Connect(A Biometric, Analytic, Systemic and Emergency Diagnostic Health Platform)
 
 A modern, responsive web application for discovering free health camps, medical checkups, and emergency services in Indore. Designed and developed by **Nihal Goud**.
 
