@@ -1,6 +1,6 @@
 # Health Connect(A Biometric, Analytic, Systemic and Emergency Diagnostic Health Platform)
 
-A modern, responsive web application for discovering free health camps, medical checkups, and emergency services in Indore. Designed and developed by **Nihal Goud**.
+A modern, responsive web application for discovering free health camps, medical checkups, and emergency services in Indore. Designed and developed by **Govind Nagar**.
 
 ## 🚀 Features
 
@@ -74,7 +74,7 @@ The build artifacts will be stored in the `/dist` folder.
 
 ## 👤 Author
 
-**Nihal Goud**
+**Govind Nagar**
 - **GitHub**: [github.com/govind-codex](https://github.com/govind-codex)
 - **LinkedIn**: [linkedin.com/in/govind-nagar-6b16771ab/](https://www.linkedin.com/in/govind-nagar-6b16771ab/)
 
