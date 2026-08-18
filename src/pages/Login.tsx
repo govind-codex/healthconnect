@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { 
-  Heart, Mail, Lock, ArrowRight, ShieldCheck, 
-  Hospital, Loader2, AlertCircle, ChevronLeft 
+import {
+  Heart, Mail, Lock, ArrowRight, ShieldCheck,
+  Hospital, Loader2, AlertCircle, ChevronLeft
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { motion, AnimatePresence } from 'motion/react';
@@ -11,7 +11,7 @@ import Footer from '../components/Footer';
 const Login = () => {
   const navigate = useNavigate();
   const { login, user } = useApp();
-  
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -38,7 +38,7 @@ const Login = () => {
         setLoading(false);
       } else {
         setLoading(false);
-        setError('Invalid credentials. For demo: admin@healthcamp.in / admin123 or org@hospital.com / org123');
+        setError('Invalid credentials.');
       }
     }, 1500);
   };
@@ -50,8 +50,8 @@ const Login = () => {
       <div className="absolute bottom-0 -right-64 w-1/2 h-1/2 bg-green-100 rounded-full blur-[120px] opacity-60"></div>
 
       <div className="w-full max-w-xl relative">
-        <Link 
-          to="/" 
+        <Link
+          to="/"
           className="inline-flex items-center text-sm font-bold text-slate-500 hover:text-blue-600 mb-8 transition-colors group"
         >
           <ChevronLeft className="h-4 w-4 mr-1 group-hover:-translate-x-1 transition-transform" />
@@ -90,8 +90,8 @@ const Login = () => {
               <label className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Email Address</label>
               <div className="relative">
                 <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" />
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="org@hospital.com"
@@ -108,8 +108,8 @@ const Login = () => {
               </div>
               <div className="relative">
                 <Lock className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" />
-                <input 
-                  type="password" 
+                <input
+                  type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"

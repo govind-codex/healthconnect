@@ -1,18 +1,19 @@
 import React from 'react';
 import { Github, Linkedin } from 'lucide-react';
 import { motion } from 'motion/react';
+import { staggerContainer, staggerItem } from '../utils/useAnimations';
 
 const Footer: React.FC = () => {
   return (
     <footer className="py-3 px-6 flex flex-col items-center justify-center text-center">
       <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-50px' }}
         className="flex flex-col items-center gap-3"
       >
-        <div className="flex flex-col items-center gap-1">
+        <motion.div variants={staggerItem} className="flex flex-col items-center gap-1">
           <h3 className="text-sm font-black uppercase tracking-[0.3em] text-slate-900">
             Govind Nagar
           </h3>
@@ -20,10 +21,12 @@ const Footer: React.FC = () => {
           <p className="text-[10px] uppercase font-bold text-blue-600 tracking-[0.15em]">
             Full Stack Developer & Product Designer
           </p>
-        </div>
+        </motion.div>
 
-        <div className="flex items-center gap-5">
-          <a
+        <motion.div variants={staggerItem} className="flex items-center gap-5">
+          <motion.a
+            whileHover={{ y: -3, scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
             href="https://github.com/govind-codex"
             target="_blank"
             rel="noopener noreferrer"
@@ -37,9 +40,11 @@ const Footer: React.FC = () => {
             <span className="text-[8px] uppercase font-black tracking-widest text-slate-400 group-hover:text-slate-900 transition-colors">
               GitHub
             </span>
-          </a>
+          </motion.a>
 
-          <a
+          <motion.a
+            whileHover={{ y: -3, scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
             href="https://www.linkedin.com/in/govind-nagar-6b16771ab/"
             target="_blank"
             rel="noopener noreferrer"
@@ -53,16 +58,22 @@ const Footer: React.FC = () => {
             <span className="text-[8px] uppercase font-black tracking-widest text-slate-400 group-hover:text-blue-600 transition-colors">
               LinkedIn
             </span>
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
 
-        <div className="flex flex-col items-center gap-2">
-          <div className="w-6 h-px bg-slate-100"></div>
+        <motion.div variants={staggerItem} className="flex flex-col items-center gap-2">
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: 24 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="h-px bg-slate-100"
+          />
 
           <p className="text-[9px] font-medium text-slate-300 tracking-wider">
             © {new Date().getFullYear()} • CREATED BY GOVIND
           </p>
-        </div>
+        </motion.div>
       </motion.div>
     </footer>
   );
