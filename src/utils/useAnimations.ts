@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+import type { RefObject } from 'react';
 
 // ── Framer Motion Variant Libraries ──
 
@@ -132,7 +133,7 @@ export const heroWordVariant = {
  * Animates a number from 0 to the target value.
  * Triggers when the element scrolls into view.
  */
-export function useCountUp(target: number, duration: number = 2000): [React.RefObject<HTMLElement | null>, number] {
+export function useCountUp(target: number, duration: number = 2000): [RefObject<HTMLElement | null>, number] {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLElement | null>(null);
   const hasAnimated = useRef(false);

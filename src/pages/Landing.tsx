@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Search, Calendar, MapPin, Users, Heart, ArrowRight, CheckCircle2, 
-  Stethoscope, Activity, Eye, Thermometer, ShieldCheck 
+  Stethoscope, Activity, Eye, Thermometer, ShieldCheck, Dna, Bell, ArrowUpRight
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { motion, useScroll, useTransform } from 'motion/react';
@@ -11,6 +11,9 @@ import {
   staggerContainer, staggerItem, staggerItemScale,
   useCountUp
 } from '../utils/useAnimations';
+import CancerResearchCard from '../components/CancerResearchCard';
+import { cancerResearchUpdates, featuredCancerResearchUpdate } from '../data/cancerResearchUpdates';
+import vaccineHeroImage from '../public/vaccine.jpg';
 
 const Hero = () => {
   const { scrollY } = useScroll();
@@ -45,7 +48,7 @@ const Hero = () => {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="h-0.5 bg-blue-600 inline-block"
               />
-              Available Now in Indore
+              LATEST CANCER RESEARCH
             </motion.p>
 
             <motion.h1
@@ -54,15 +57,13 @@ const Hero = () => {
               variants={staggerContainer}
               className="text-4xl sm:text-5xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[0.95] mb-6 sm:mb-8"
             >
-              {['Find', 'Free'].map((word, i) => (
+              {['A', 'New', 'Era', 'In'].map((word, i) => (
                 <motion.span key={i} variants={staggerItem} className="inline-block mr-3">
                   {word}
                 </motion.span>
               ))}
               <br className="hidden sm:block" />
-              <motion.span variants={staggerItem} className="inline-block mr-3">Health</motion.span>
-              <br className="hidden sm:block" />
-              <motion.span variants={staggerItem} className="inline-block text-blue-600">Camps</motion.span>
+              <motion.span variants={staggerItem} className="inline-block text-blue-600">Cancer Vaccine</motion.span>
             </motion.h1>
 
             <motion.p
@@ -72,8 +73,7 @@ const Hero = () => {
               custom={0.4}
               className="text-base sm:text-lg text-slate-500 leading-relaxed max-w-lg mb-8 sm:mb-10 font-medium mx-auto lg:mx-0"
             >
-              Discover free medical checkups, blood tests, and specialist consultations across Indore limits. 
-              Geometric balance in healthcare discovery.
+              Personalized mRNA cancer vaccines are showing promising results in clinical trials, bringing researchers closer to new ways of helping the immune system fight cancer.
             </motion.p>
 
             <motion.div
@@ -116,8 +116,8 @@ const Hero = () => {
               <div className="relative p-2 bg-white rounded-[40px] shadow-2xl shadow-slate-200 overflow-hidden group">
                 <img
                   className="rounded-[32px] w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
-                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
-                  alt="Indore Health"
+                  src={vaccineHeroImage}
+                  alt="Cancer vaccine research"
                 />
               </div>
               <motion.div
@@ -311,10 +311,156 @@ const Features = () => {
   );
 };
 
+const CancerResearchUpdates = () => {
+  const regularUpdates = cancerResearchUpdates.filter((update) => update.id !== featuredCancerResearchUpdate.id);
+
+  return (
+    <section className="py-20 lg:py-32 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12 lg:mb-16"
+        >
+          <motion.div variants={staggerItem} className="max-w-2xl text-center lg:text-left">
+            <p className="text-blue-600 font-bold text-xs sm:text-sm mb-4 uppercase tracking-[0.2em] flex items-center justify-center lg:justify-start gap-2">
+              <Dna className="h-4 w-4" />
+              Cancer Vaccine & Research Updates
+            </p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+              Verified healthcare updates, clearly labeled.
+            </h2>
+          </motion.div>
+          <motion.p variants={staggerItem} className="text-slate-500 font-medium leading-relaxed max-w-md text-center lg:text-right">
+            Stay informed about developments in cancer prevention, vaccines, clinical trials, and cancer research.
+          </motion.p>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-stretch mb-8">
+          <motion.article
+            initial={{ opacity: 0, y: 36 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="lg:col-span-7 bg-slate-900 rounded-[28px] sm:rounded-[36px] p-6 sm:p-8 lg:p-10 relative overflow-hidden min-h-[360px] flex flex-col justify-between"
+          >
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute -top-24 -right-16 w-72 h-72 bg-blue-500/20 rounded-full blur-[90px] animate-blob" />
+              <div className="absolute -bottom-24 -left-16 w-72 h-72 bg-emerald-500/10 rounded-full blur-[90px] animate-blob animation-delay-2000" />
+            </div>
+
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 bg-white/10 border border-white/10 text-blue-100 rounded-full px-4 py-2 text-[10px] font-black uppercase tracking-widest mb-6">
+                <Dna className="h-4 w-4" />
+                Latest Cancer Vaccine Research
+              </div>
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight mb-5 max-w-2xl">
+                {featuredCancerResearchUpdate.title}
+              </h3>
+              <p className="text-slate-300 text-base sm:text-lg font-medium leading-relaxed max-w-2xl mb-8">
+                Researchers around the world are developing vaccine-based approaches designed to help the immune system recognize cancer cells. This featured update is labeled as {featuredCancerResearchUpdate.status.toLowerCase()} and should not be read as an approved public treatment.
+              </p>
+            </div>
+
+            <div className="relative z-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+              <div className="flex flex-wrap gap-3">
+                <span className="bg-blue-500/15 text-blue-100 border border-blue-300/20 rounded-full px-4 py-2 text-[10px] font-black uppercase tracking-widest">
+                  {featuredCancerResearchUpdate.status}
+                </span>
+                <span className="bg-white/10 text-slate-200 border border-white/10 rounded-full px-4 py-2 text-[10px] font-black uppercase tracking-widest">
+                  {featuredCancerResearchUpdate.cancerType}
+                </span>
+              </div>
+              <a
+                href={featuredCancerResearchUpdate.sourceUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="geometric-btn-primary px-6 py-3 inline-flex items-center justify-center gap-2"
+              >
+                Learn More
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+            </div>
+          </motion.article>
+
+          <motion.div
+            initial={{ opacity: 0, y: 36 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="lg:col-span-5 grid sm:grid-cols-2 lg:grid-cols-1 gap-6"
+          >
+            {regularUpdates.slice(0, 2).map((update) => (
+              <CancerResearchCard key={update.id} update={update} compact />
+            ))}
+          </motion.div>
+        </div>
+
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-80px' }}
+          className="mb-8"
+        >
+          <div className="flex items-center justify-between gap-4 mb-5">
+            <motion.h3 variants={staggerItem} className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+              Latest Research
+            </motion.h3>
+            <motion.span variants={staggerItem} className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 hidden sm:inline">
+              Browse verified updates
+            </motion.span>
+          </div>
+          <div className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory">
+            {regularUpdates.slice(2).map((update) => (
+              <motion.div key={update.id} variants={staggerItem} className="min-w-[280px] sm:min-w-[340px] lg:min-w-[360px] snap-start">
+                <CancerResearchCard update={update} compact />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="grid lg:grid-cols-12 gap-6 items-stretch"
+        >
+          <div className="lg:col-span-4 bg-blue-50 border border-blue-100 rounded-[24px] sm:rounded-[28px] p-6 sm:p-8">
+            <div className="h-12 w-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center shadow-lg shadow-blue-200 mb-6">
+              <Bell className="h-6 w-6" />
+            </div>
+            <h3 className="text-xl font-black text-slate-900 tracking-tight mb-3">Cancer Health Reminders</h3>
+            <p className="text-sm text-slate-600 font-medium leading-relaxed mb-6">
+              Get notified about important cancer screening recommendations, vaccination information, and verified healthcare updates.
+            </p>
+            <span className="inline-flex rounded-full bg-white text-blue-700 border border-blue-100 px-4 py-2 text-[10px] font-black uppercase tracking-widest">
+              Coming Soon
+            </span>
+          </div>
+
+          <div className="lg:col-span-8 bg-slate-50 border border-slate-100 rounded-[24px] sm:rounded-[28px] p-6 sm:p-8 flex flex-col justify-center">
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-3">
+              Medical Information Disclaimer
+            </p>
+            <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">
+              This section provides general health and research information for educational purposes only. Cancer vaccines and treatments may be at different stages of research, clinical testing, or regulatory approval. Always consult a qualified healthcare professional for medical advice.
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
 const Landing = () => {
   return (
     <div className="bg-white">
       <Hero />
+      <CancerResearchUpdates />
       <Stats />
       <Features />
       <TestsSection />
