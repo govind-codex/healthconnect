@@ -1,6 +1,6 @@
 # 🏥 Health Connect
 
-### A Biometric, Analytic, Systemic & Emergency Diagnostic Health Platform
+### HEALTH CONNECT (A Biometric, Analytic, Systemic & Emergency Diagnostic Health Platform)
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="React 19"/>
